@@ -1,4 +1,4 @@
-<?php
+L<?php
 session_start();
 require_once '../config.php';
 
@@ -99,9 +99,10 @@ $stmt->close();
                         <p><strong>DOB:</strong> <?php echo date('d M Y', strtotime($patient['dob'])); ?></p>
                         <p><strong>Phone:</strong> <?php echo htmlspecialchars($patient['phone']); ?></p>
                         <p><strong>Registered:</strong> <?php echo date('d M Y', strtotime($patient['created_at'])); ?></p>
-                        <?php if($patient['last_visit']): ?>
+                        <?php if ($patient['last_visit']): ?>
                         <p class="mb-0"><strong>Last Visit:</strong> <?php echo date('d M Y h:i A', strtotime($patient['last_visit'])); ?></p>
-                        <?php endif; ?>
+                        <?php
+endif; ?>
                     </div>
                 </div>
             </div>
@@ -161,13 +162,16 @@ $stmt->close();
                                             </div>
                                         </div>
                                     </div>
-                                <?php endwhile; ?>
+                                <?php
+    endwhile; ?>
                             </div>
-                        <?php else: ?>
+                        <?php
+else: ?>
                             <div class="alert alert-info mb-0">
                                 No past visits or medical history found.
                             </div>
-                        <?php endif; ?>
+                        <?php
+endif; ?>
                     </div>
                 </div>
             </div>
